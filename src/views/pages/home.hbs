@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Village Center Scheduling Assistant</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        h1, h2 {
+            color: #5a5a5a;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.8em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Grant Ranch Employee List</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Availability</th>
+                    <th>Head Guard</th>
+                    <th>Head Marina</th>
+                    <th>Marina</th>
+                    <th>Weekly Hours</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each employees}}
+                <tr>
+                    <td>{{name}}</td>
+                    <td>{{availability}}</td>
+                    <td>{{#if head_g}}Yes{{else}}No{{/if}}</td>
+                    <td>{{#if head_m}}Yes{{else}}No{{/if}}</td>
+                    <td>{{#if marina}}Yes{{else}}No{{/if}}</td>
+                    <td>{{weekly_hours}}</td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+        <div class="footer">
+            <p>Need help? Contact <a href="mailto:support@villagecenter.com">support@villagecenter.com</a></p>
+        </div>
+    </div>
+</body>
+</html>
